@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/chatRoom.css">
+    <link rel="stylesheet" href="css/public.css">
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+</head>
+<body>
+
+
+<button id="group">返回群聊天</button>
+
+<div class="chatRoom">
+<div class="div1">
+    <ul class="member_list" id="member_list">
+
+    </ul>
+</div>
+
+
+    <div class="right_main">
+
+        <ul class="chat_content_list" id="chat_content_list">
+
+        </ul>
+
+        <form action="" class="send_chat" id="form_msg">
+
+            <div class="buttons">
+                <button class="btn_click float_right">发送</button>
+
+            </div>
+            <div class="chat_input">
+                <div class="full_width full_height send_area" id="send_area" contenteditable="true">
+                 </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="full_screen_cover" id="cover">
+
+
+    <form action="" id="form_login">
+
+        <div class="select_icon">
+            <div class="title">请选择您的头像！！！</div>
+            <ul class="head_icon_list" id="head_icon_list">
+
+            </ul>
+            <div class="bottom_btns">
+                <div class="bottom_btn" id="btn_ensure">确定</div>
+            </div>
+        </div>
+
+        <div class="login" id="login">
+            <div class="input">
+                <div class="title">用户名:</div>
+                <input class="field" id="login_field">
+            </div>
+            <input type="hidden" id="head_path">
+            <div class="bottom_btns">
+                <button class="bottom_btn" id = 'btn_login'>登录</button>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+<script src="js/jquery.js"></script>
+
+<script src="js/public.js"></script>
+<script src="js/chatRoom.js"></script>
+<script src="js/sendData.js"></script>
+<script src="js/receiveData.js"></script>
+</body>
+</html>

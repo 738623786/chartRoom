@@ -1,0 +1,129 @@
+
+/*---------------------------------------公共设置---------------------------------------*/
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+input{
+    outline: none;
+}
+
+/*去除所有ul的内外边距*/
+ul{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+
+
+
+
+/*---------------------------------------自定义表格---------------------------------------*/
+
+/*表格*/
+.table{
+    display: table;
+    border-collapse: collapse;
+}
+.captain{
+    display: table-caption;
+}
+
+.row-group{display:table-row-group;}
+
+/*行*/
+.row{
+    display: table-row;
+}
+/*单元格*/
+.cell{
+    vertical-align: top;
+    display: table-cell;
+}
+
+/*---------------------------------------悬浮交替出现的两个元素---------------------------------------*/
+/*正常时的显示项*/
+.show{
+    display: inline-block;
+}
+/*正常时的隐藏项*/
+.hidden{
+    display: none;
+}
+/*悬浮在宿主上，隐藏显示项*/
+.hover_host:hover>.show{
+    display: none;
+}
+/*悬浮在宿主上，显示隐藏项*/
+.hover_host:hover>.hidden{
+    display: inline-block;
+}
+
+/*---------------------------------------其他---------------------------------------*/
+
+.container{
+    margin: auto;
+    width: 1200px;
+}
+
+.full_width{
+    width: 100%;
+}
+
+.full_height{
+    height: 100%;
+}
+
+.relative{
+    position: relative;
+}
+
+.overflow_hidden{
+    overflow: hidden;
+}
+
+.vc_hc_position{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.vertical_align_middle{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.float_right{
+    float: right;
+}
+
+.float_left{
+    float: left;
+}
+
+
+
+
+
+

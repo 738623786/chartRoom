@@ -1,0 +1,358 @@
+/*聊天室的布局
+*/
+
+
+/*----------------------------------------整体布局----------------------------------------*/
+
+body{
+    text-align: center;
+}
+
+#group{
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 10px;
+    width: 120px;
+    height: 40px;
+    margin: auto;
+
+    font-size: 20px;
+    background: lightsalmon;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: none;
+}
+
+.chatRoom{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: left;
+}
+
+
+
+.chatRoom .right_main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatRoom .chat_content_list{
+    overflow: auto;
+    flex: 1;
+    border-bottom:  1px solid #ccc;
+}
+
+.chatRoom .send_chat{
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*----------------------------------------成员列表----------------------------------------*/
+
+.div1{
+    height: 100%;
+    flex: 0 0 30%;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+}
+.member_list{
+
+
+}
+
+.member_list li{
+    position: relative;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+
+}
+
+
+.member_list .red_point{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: #ff0000;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+
+.member_list .head_icon{
+    flex: 0 0 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+
+.member_list .detail{
+    flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.member_list .nickname{
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.member_list .summary{
+    display: inline;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+
+/*----------------------------------------聊天内容----------------------------------------*/
+
+.chat_content_list{
+
+}
+
+.chat_content_list li{
+    padding: 15px;
+}
+
+.chat_content_list li:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.chat_content_list .head_icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+
+.chat_content_list .chat_content{
+    max-width: 200px;
+    border-radius: 4px;
+    margin: 8px 15px;
+    padding: 12px 18px;
+    font-size: 18px;
+    position: relative;
+    word-break: break-all;
+}
+
+.chat_content_list .self .chat_content{
+    background-color: #d7f4fe;
+}
+
+.chat_content_list .other .chat_content{
+    background-color: #f3f3f3;
+}
+
+.chat_content_list .chat_content:before{
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 0;
+     border: 8px solid transparent;
+     top: 4px;
+ }
+
+
+
+.chat_content_list .self .chat_content:before{
+    border-left-color: #d7f4fe;
+    left: 100%;
+}
+
+.chat_content_list .other .chat_content:before{
+    border-right-color: #f3f3f3;
+    right: 100%;
+}
+
+
+.chat_content_list .message_unsend:after{
+    content: '!';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    background-color: #ff0000;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.chat_content_list .self .message_unsend:after{
+    border-left-color: #d7f4fe;
+    left: -30px;
+}
+
+.chat_content_list .other .message_unsend:after{
+    border-right-color: #f3f3f3;
+    right: -30px;
+}
+
+
+.chat_content_list .other .head_icon,
+.chat_content_list .other .chat_content{
+    float: left;
+}
+
+.chat_content_list .self .head_icon,
+.chat_content_list .self .chat_content{
+    float: right;
+}
+
+
+/*----------------------------------------发送聊天内容----------------------------------------*/
+
+
+
+.send_chat .buttons{
+    flex: 0 0 54px;
+    background-color: lightblue;
+}
+
+.send_chat .chat_input{
+    flex: 1;
+    overflow: auto;
+    padding: 10px;
+}
+
+.send_chat .btn_click{
+    vertical-align: middle;
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+    margin: 7px 15px;
+    font-size: 20px;
+}
+
+.send_chat .send_area{
+    outline: none;
+    border: none;
+}
+
+
+
+/*----------------------------------------登录----------------------------------------*/
+
+.full_screen_cover{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.login,
+.select_icon{
+    position: fixed;
+    width: 300px;
+    height: 250px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.login{
+
+    display: none;
+}
+.login .input{
+    margin: 20px 0px 100px;
+    display: flex;
+    font-size: 20px;
+}
+.login .input .title{
+    flex: 0 0 60px;
+    margin-right: 10px;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.login .input .field{
+    flex: 1;
+    height: 30px;
+}
+
+
+.select_icon{
+    display: flex;
+    flex-direction: column;
+}
+
+.select_icon .title{
+    flex: 0 0 24px;
+    line-height: 24px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.select_icon .head_icon_list{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    height: 100%;
+    margin: 10px 0px;
+}
+
+.select_icon .bottom_btns,
+.login .bottom_btns{
+    flex: 0 0 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.select_icon .bottom_btn,
+.login .bottom_btn{
+    width: 100px;
+    line-height: 40px;
+    display: inline-block;
+    background-color: lightgreen;
+    color: #fff;
+    font-size: 24px;
+    vertical-align: bottom;
+    border-radius: 5px;
+
+}
+
+.select_icon .head_icon_list li{
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.select_icon .head_icon_list img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
+
